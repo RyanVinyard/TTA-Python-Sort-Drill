@@ -24,16 +24,21 @@ def custom_sort(alist):
 
 # Now add a statement that if a list has nothing or just one number in it
 # It must be sorted
+
     if len(alist) <= 1:
         return alist
-    else:
+    
 # The pivot starts about halfway through the list at index len/2
+
+    else:        
         pivotnum = int(len(alist)/2)
         if pivotnum < 0:
             pivotnum = 0
         pivot = alist[pivotnum]
+        
 # Go through each number and add them to lowerlist or higherlist
 # If any number is the same as the pivot it goes into the pivotlist
+
         for i in alist:
             if i < pivot:
                 lowerlist.append(i)
@@ -41,7 +46,9 @@ def custom_sort(alist):
                 higherlist.append(i)
             else:
                 pivotlist.append(i)
+                
 # This process repeats until the lists are sorted
+
     lowerlist = custom_sort(lowerlist)
     higherlist = custom_sort(higherlist)
     return lowerlist + pivotlist + higherlist
